@@ -25,5 +25,5 @@ This project aims to familiarize students with the creation and .. of relational
 ## Docker Commands
 Use ```sudo docker compose up -d``` to build the container. The database will already be initialized.<br>
 Use ```sudo docker exec -it ceidtrip-db mysql -u root -p``` to enter container in MySQL cli.<br>
-Enter root password. (```password```)
-Use ```sudo docker compose down -v``` in order to shut down the docker container and remove any data.
+Enter root password. (```password```) <br>
+Use ```sudo docker compose down -v``` in order to shut down the docker container and remove any data. <br>
