@@ -47,5 +47,3 @@ END $
 
 DELIMITER ;
 
-CALL calculate_branch_earnings(1,@profit);
-

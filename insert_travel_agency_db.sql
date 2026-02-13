@@ -78,7 +78,7 @@ INSERT INTO trip (tr_departure, tr_return, tr_maxseats, tr_cost_adult, tr_cost_c
 ('2024-05-20 08:30:00', '2024-05-22 19:00:00', 30, 150.00, 75.00, 'COMPLETED', 8, 3, 'AT3003', 'AT2003'), 
 ('2024-09-15 09:00:00', '2024-09-17 17:00:00', 25, 120.00, 60.00, 'ACTIVE', 5, 3, 'AT3003', 'AT2001'), 
 ('2024-12-20 10:00:00', '2024-12-26 20:00:00', 50, 700.00, 350.00, 'PLANNED', 20, 1, 'AT3001', 'AT2004'), 
-('2024-06-15 08:00:00', '2024-06-18 20:00:00', 45, 300.00, 150.00, 'CANCELLED', 10, 2, 'AT3002', 'AT2002');
+('2024-06-15 08:00:00', '2024-06-18 20:00:00', 45, 300.00, 150.00, 'CANCELED', 10, 2, 'AT3002', 'AT2002');
 
 INSERT INTO travel_to (to_tr_id, to_dst_id, to_arrival, to_departure, to_sequence) VALUES
 (1, 1, '2024-06-01 12:00:00', '2024-06-05 10:00:00', 1),
@@ -117,7 +117,7 @@ INSERT INTO reservation (res_tr_id, res_seatnum, res_cust_id, res_status, res_to
 (2, 1, 4, 'PAID', 600.00),
 (2, 2, 5, 'PAID', 600.00),
 (3, 10, 6, 'CONFIRMED', 450.00),
-(4, 5, 7, 'CANCELLED', 150.00),
+(4, 5, 7, 'CANCELED', 150.00),
 (4, 6, 8, 'CONFIRMED', 150.00),
 (5, 1, 9, 'CONFIRMED', 120.00),
 (6, 15, 10, 'PENDING', 700.00),
@@ -127,5 +127,5 @@ INSERT INTO reservation (res_tr_id, res_seatnum, res_cust_id, res_status, res_to
 (6, 22, 3, 'CONFIRMED', 700.00),
 (6, 23, 4, 'CONFIRMED', 700.00),
 (6, 24, 5, 'CONFIRMED', 700.00),
-(7, 1, 2, 'CANCELLED', 0.00);
+(7, 1, 2, 'CANCELED', 0.00);
 
