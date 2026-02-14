@@ -106,7 +106,7 @@ INSERT INTO customer (cust_name, cust_lname, cust_email, cust_phone, cust_addres
 ('Mike', 'Hunt', 'mhunt@mail.com', '6900000005', 'Farm Rd 5', '1982-08-08'),
 ('Gabe', 'Itch', 'gitch@mail.com', '6900000006', 'German St 6', '1995-02-14'),
 ('Jack', 'Dove', 'jdove@mail.com', '6900000007', 'Casino Blvd 7', '1988-09-19'),
-('Greggory', 'House', 'ghouse@mail.com', '6900000008', 'Comedy Club 8', '1992-04-25'),
+('Gregory', 'House', 'ghouse@mail.com', '6900000008', 'Comedy Club 8', '1992-04-25'),
 ('James', 'Wilson', 'jwils@mail.com', '6900000009', 'Vault Dr 9', '1983-12-05'),
 ('Lisa', 'Cuddy', 'lcuddy@mail.com', '6900000010', 'Emergency Ln 10', '1998-07-07');
 
