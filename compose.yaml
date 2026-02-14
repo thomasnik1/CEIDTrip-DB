@@ -10,5 +10,4 @@ services:
     volumes:
       - ./create_travel_agency_db.sql:/docker-entrypoint-initdb.d/01_create_db.sql
       - ./insert_travel_agency_db.sql:/docker-entrypoint-initdb.d/02_insert_db.sql
-      - ./salary_check.sql:/docker-entrypoint-initdb.d/03_trigger.sql
-      - ./branch_earnings.sql:/docker-entrypoint-initdb.d/04_procedure.sql
+
