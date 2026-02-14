@@ -1,2 +1,3 @@
 *.sql linguist-detectable=true
-*.yaml linguist-detecatble=true
+*.yaml linguist-detectatble=true
+*.yml linguist-detectatble=true
