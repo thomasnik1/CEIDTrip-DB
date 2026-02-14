@@ -5,7 +5,7 @@ A MySQL database designed to manage the operations of a travel agency. CEIDTrip-
 This project aims to familiarize students with the creation and management of relational databases using MySQL. Our purpose in this project is to create a database for a travel agency. The travel agency contains different branches, staff and organizes trips and events. The database must contain the core tables for each primary entity along with some associative tables in order for to handle the relationships between them. The core and junction tables we must create and use are as follows:
 ### Database Schema Overview
 
-| Core Entity Tables | Junction & Supporting Tables |
+| Core Entity Tables | Junction Tables |
 | :---: | :---: |
 | `admin` | `manages` |
 | `branch` | `phones` |
@@ -16,6 +16,7 @@ This project aims to familiarize students with the creation and management of re
 | `guide` | |
 | `trip` | |
 | `worker` | |
+
 ## Technologies Used
 **Database**: MySQL was used in order to build the database.
 
