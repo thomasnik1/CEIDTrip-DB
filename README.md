@@ -6,7 +6,7 @@ This project aims to familiarize students with the creation and management of re
 ### Database Schema Overview
 
 | Core Entity Tables | Junction & Supporting Tables |
-| :--- | :--- |
+| :---: | :---: |
 | `admin` | `manages` |
 | `branch` | `phones` |
 | `customer` | `reservation` |
