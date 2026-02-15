@@ -4,5 +4,5 @@ CREATE TABLE trip_log (
 	past_tr_return DATETIME NOT NULL,
 	past_tr_dest_count INT,
 	past_tr_participants INT,
-	past_tr_revenue
+	past_tr_revenue FLOAT(10,2)
 );
