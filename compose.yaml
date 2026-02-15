@@ -11,4 +11,5 @@ services:
       - ./create_travel_agency_db.sql:/docker-entrypoint-initdb.d/01_create_db.sql
       - ./insert_travel_agency_db.sql:/docker-entrypoint-initdb.d/02_insert_db.sql
       - ./vehicle.sql:/docker-entrypoint-initdb.d/03_vehicles.sql
-      - ./accomodation.sql:/docker-entrypoint-initdb.d/04_accomodation.sql
+      - ./vehicle_inserts.sql:/docker-entrypoint-initdb.d/04_vehicle_insertions.sql
+      - ./accomodation.sql:/docker-entrypoint-initdb.d/05_accomodation.sql
