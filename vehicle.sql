@@ -10,7 +10,7 @@ CREATE TABLE vehicle (
         (ve_type = 'BUS' AND ve_seats BETWEEN 21 AND 50) OR
         (ve_type = 'MINIBUS' AND ve_seats BETWEEN 10 AND 20) OR
         (ve_type = 'VAN' AND ve_seats BETWEEN 6 AND 9) OR
-        (ve_type = 'BUS' AND ve_seats BETWEEN 1 AND 5)
+        (ve_type = 'CAR' AND ve_seats BETWEEN 1 AND 5)
     ),
 	
 	ve_state ENUM('AVAILABLE', 'IN USE', 'UNDER MAINTENANCE') NOT NULL,
