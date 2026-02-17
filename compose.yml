@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mysql:8.0.44-debian
+    container_name: ceidtrip-db
+    environment:
+      MYSQL_DATABASE: travel_agency
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./Database_creation_scripts/create_travel_agency_db.sql:/docker-entrypoint-initdb.d/01_create_db.sql
+      - ./Database_insertions_scripts/insert_travel_agency_db.sql:/docker-entrypoint-initdb.d/02_insert_db.sql
+      - ./Database_creation_scripts/vehicle.sql:/docker-entrypoint-initdb.d/03_vehicles.sql
+      - ./Database_insertions_scripts/vehicle_inserts.sql:/docker-entrypoint-initdb.d/04_vehicle_insertions.sql
+      - ./Database_creation_scripts/accomodation.sql:/docker-entrypoint-initdb.d/05_accomodation.sql
