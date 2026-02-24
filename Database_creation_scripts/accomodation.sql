@@ -10,7 +10,9 @@ CREATE TABLE accomodation(
 	),
 	
 	accom_score FLOAT(3,2) NOT NULL,
-	accom_addr TEXT,
+	accom_street_num VARCHAR(50),
+    accom_city VARCHAR(100),
+    accom_postal_code INT(5),
 	accom_rooms INT(5) NOT NULL,
 	accom_price FLOAT(10,2) NOT NULL,
 	accom_services SET ('FREE WIFI', 'BAR/RESTAURANT', 'AIR CONDITIONING', 'WHEELCHAIR ACCESSIBLE'),

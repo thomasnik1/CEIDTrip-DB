@@ -1,0 +1,5 @@
+DROP PROCEDURE IF EXISTS search_accomodation;
+
+DELIMITER $
+
+BEGIN
