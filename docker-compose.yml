@@ -1,6 +1,6 @@
 services:
   db:
-    image: mysql:8.0.44-debian
+    image: mysql:lts
     container_name: ceidtrip-db
     restart: always
     environment:
