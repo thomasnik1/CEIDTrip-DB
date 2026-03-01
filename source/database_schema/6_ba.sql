@@ -5,3 +5,4 @@ CREATE TABLE dba (
 	dba_end_date DATETIME NOT NULL,
 	dba_log TEXT
 );
+

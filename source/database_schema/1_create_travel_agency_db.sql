@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS travel_agency;
+
+CREATE DATABASE travel_agency;
+
 USE travel_agency;
 
 CREATE TABLE branch (
@@ -73,6 +77,17 @@ CREATE TABLE customer (
     cust_birth_date DATE NOT NULL
 );
 
+CREATE TABLE destination (
+    dst_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    dst_name VARCHAR(100) NOT NULL,
+    dst_descr TEXT,
+    dst_rtype ENUM('LOCAL', 'ABROAD') NOT NULL,
+    dst_language_code VARCHAR(5),
+    dst_location INT(11), 
+    FOREIGN KEY (dst_language_code) REFERENCES language_ref(lang_code),
+    FOREIGN KEY (dst_location) REFERENCES destination(dst_id)
+);
+
 CREATE TABLE trip (
     tr_id INT(11) AUTO_INCREMENT PRIMARY KEY,
     tr_departure DATETIME NOT NULL,
@@ -88,17 +103,6 @@ CREATE TABLE trip (
     FOREIGN KEY (tr_br_code) REFERENCES branch(br_code),
     FOREIGN KEY (tr_gui_AT) REFERENCES guide(gui_AT),
     FOREIGN KEY (tr_drv_AT) REFERENCES driver(drv_AT)
-);
-
-CREATE TABLE destination (
-    dst_id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    dst_name VARCHAR(100) NOT NULL,
-    dst_descr TEXT,
-    dst_rtype ENUM('LOCAL', 'ABROAD') NOT NULL,
-    dst_language_code VARCHAR(5),
-    dst_location INT(11), 
-    FOREIGN KEY (dst_language_code) REFERENCES language_ref(lang_code),
-    FOREIGN KEY (dst_location) REFERENCES destination(dst_id)
 );
 
 CREATE TABLE travel_to (

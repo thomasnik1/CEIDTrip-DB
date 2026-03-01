@@ -6,3 +6,4 @@ CREATE TABLE trip_log (
 	past_tr_participants INT,
 	past_tr_revenue FLOAT(10,2)
 );
+
