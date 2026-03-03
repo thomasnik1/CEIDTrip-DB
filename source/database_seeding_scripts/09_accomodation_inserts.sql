@@ -14,5 +14,5 @@ INSERT INTO accomodation (
 (7, 'Meteora Rocks Guesthouse', 'GUESTHOUSE', NULL, 4.9, 1, 'Kalabaka Main Road', 'Meteora', 42200, '4000000006', 'meteora@mail.com', 8, 7, 75.00, 'FREE WIFI,AIR CONDITIONING', 4),
 (8, 'Monastery View Resort', 'RESORT', 5, 4.8, 1, 'Kastraki Village', 'Meteora', 42200, '4000000007', 'monastery@mail.com', 30, 12, 210.00, 'FREE WIFI,BAR/RESTAURANT,AIR CONDITIONING', 4),
 (9, 'Palamidi Vista', 'HOTEL', 3, 4.4, 1, 'Staikopoulou 15', 'Nafplio', 21100, '5000000008', 'palamid@mail.com', 25, 23, 110.00, 'FREE WIFI,AIR CONDITIONING,WHEELCHAIR ACCESSIBLE', 5),
-(10, 'Old Town Sanctuary', 'RENTAL ROOM', NULL, 4.5, 1, 'Bouboulinas 4', 'Nafplio', 21100, '45000000009', 'sanctuary@mail.com', 5, 5, 65.00, 'FREE WIFI', 5);
+(10, 'Old Town Sanctuary', 'RENTAL ROOM', NULL, 4.5, 1, 'Bouboulinas 4', 'Nafplio', 21100, '5000000009', 'sanctuary@mail.com', 5, 5, 65.00, 'FREE WIFI', 5);
 

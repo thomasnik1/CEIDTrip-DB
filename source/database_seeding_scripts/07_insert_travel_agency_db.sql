@@ -18,16 +18,17 @@ INSERT INTO worker (wrk_AT, wrk_name, wrk_lname, wrk_email, wrk_salary, wrk_br_c
 ('AT3003', 'Gustavo', 'Fring', 'gfring@agency.gr', 1150.00, 3),
 ('AT3004', 'Skinny', 'Pete', 'spete@agency.gr', 1000.00, 1);
 
-UPDATE branch SET br_manager_AT = 'AT1001' WHERE br_code = 1;
-UPDATE branch SET br_manager_AT = 'AT1003' WHERE br_code = 2;
-UPDATE branch SET br_manager_AT = 'AT1005' WHERE br_code = 3;
-
 INSERT INTO admin (adm_AT, adm_type, adm_diploma) VALUES
 ('AT1001', 'ADMINISTRATIVE', 'MBA in Management'),
 ('AT1002', 'ACCOUNTING', 'Economics Degree'),
 ('AT1003', 'LOGISTICS', 'Supply Chain MSc'),
 ('AT1004', 'ADMINISTRATIVE', 'Business Admin BSc'),
 ('AT1005', 'LOGISTICS', 'Logistics Diploma');
+
+UPDATE branch SET br_manager_AT = 'AT1001' WHERE br_code = 1;
+UPDATE branch SET br_manager_AT = 'AT1003' WHERE br_code = 2;
+UPDATE branch SET br_manager_AT = 'AT1005' WHERE br_code = 3;
+
 
 INSERT INTO driver (drv_AT, drv_licence, drv_route, drv_experience) VALUES
 ('AT2001', 'C', 'LOCAL', 5),

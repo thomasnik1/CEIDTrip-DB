@@ -29,6 +29,3 @@ DELIMITER ;
 
 CALL search_accomodation(1, '2024-03-04', '2024-03-07', 8);
 
-
-select accom_id, accom_name, accom_dest_id from accomodation
-inner join accomodation_reservation on accom_id = accomodation_reservation.acc_res_to_acc_id
