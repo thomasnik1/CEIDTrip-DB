@@ -18,6 +18,10 @@ INSERT INTO worker (wrk_AT, wrk_name, wrk_lname, wrk_email, wrk_salary, wrk_br_c
 ('AT3003', 'Gustavo', 'Fring', 'gfring@agency.gr', 1150.00, 3),
 ('AT3004', 'Skinny', 'Pete', 'spete@agency.gr', 1000.00, 1);
 
+UPDATE branch SET br_manager_AT = 'AT1001' WHERE br_code = 1;
+UPDATE branch SET br_manager_AT = 'AT1003' WHERE br_code = 2;
+UPDATE branch SET br_manager_AT = 'AT1005' WHERE br_code = 3;
+
 INSERT INTO admin (adm_AT, adm_type, adm_diploma) VALUES
 ('AT1001', 'ADMINISTRATIVE', 'MBA in Management'),
 ('AT1002', 'ACCOUNTING', 'Economics Degree'),
@@ -36,10 +40,6 @@ INSERT INTO guide (gui_AT, gui_cv) VALUES
 ('AT3002', 'Art History PhD, speaks 3 languages'),
 ('AT3003', 'Tourism Management BSc, local expert'),
 ('AT3004', 'European History Specialist');
-
-UPDATE branch SET br_manager_AT = 'AT1001' WHERE br_code = 1;
-UPDATE branch SET br_manager_AT = 'AT1003' WHERE br_code = 2;
-UPDATE branch SET br_manager_AT = 'AT1005' WHERE br_code = 3;
 
 INSERT INTO manages (mng_adm_AT, mng_br_code) VALUES
 ('AT1001', 1),
@@ -99,16 +99,19 @@ INSERT INTO event (ev_tr_id, ev_start, ev_end, ev_descr) VALUES
 (7, '2024-06-16 10:00:00', '2024-06-16 12:00:00', 'Berlin Wall Memorial');
 
 INSERT INTO customer (cust_name, cust_lname, cust_email, cust_phone, cust_address, cust_birth_date) VALUES
-('Hank', 'Schrader', 'hschra@mail.com', '6900000001', 'Kitchen St 1', '1980-05-10'),
+('Hank', 'Schrader', 'hschra@mail.com', '6900000001', 'Cumbre Del Sur Ct 4901', '1980-05-10'),
 ('Bob', 'Squarepants', 'bsquare@mail.com', '6900000002', 'Antique Rd 2', '1985-06-15'),
 ('Patrick', 'Star', 'pstar@mail.com', '6900000003', 'Construction Ave 3', '1990-01-20'),
 ('Eugene', 'Krabs', 'eukrabs@mail.com', '6900000004', 'Magic Ln 4', '1975-11-30'),
 ('Mike', 'Hunt', 'mhunt@mail.com', '6900000005', 'Farm Rd 5', '1982-08-08'),
 ('Gabe', 'Itch', 'gitch@mail.com', '6900000006', 'German St 6', '1995-02-14'),
 ('Jack', 'Dove', 'jdove@mail.com', '6900000007', 'Casino Blvd 7', '1988-09-19'),
-('Gregory', 'House', 'ghouse@mail.com', '6900000008', 'Comedy Club 8', '1992-04-25'),
+('Gregory', 'House', 'ghouse@mail.com', '6900000008', 'Baker St 221B', '1992-04-25'),
 ('James', 'Wilson', 'jwils@mail.com', '6900000009', 'Vault Dr 9', '1983-12-05'),
-('Lisa', 'Cuddy', 'lcuddy@mail.com', '6900000010', 'Emergency Ln 10', '1998-07-07');
+('Lisa', 'Cuddy', 'lcuddy@mail.com', '6900000010', 'Emergency Ln 10', '1998-07-07'),
+('Dexter', 'Morgan', 'bbutch@mail.com', '6900000011', 'Apt 1155 103rd St', '1971-02-01'),
+('Debrah', 'Morgan', 'dmorgan@mail.com', '6900000012', 'Apt 1588 2nd St', '1979-12-07'),
+('Bruce', 'Wayne', 'notbatman@mail.com', '6900000013', 'Wayne Manor 1007 Mtn Dr', '1974-02-19');
 
 INSERT INTO reservation (res_tr_id, res_seatnum, res_cust_id, res_status, res_total_cost) VALUES
 (1, 1, 1, 'CONFIRMED', 500.00),

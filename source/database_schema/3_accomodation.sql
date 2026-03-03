@@ -14,6 +14,8 @@ CREATE TABLE accomodation(
 	accom_street_num VARCHAR(50),
     accom_city VARCHAR(100),
     accom_postal_code INT(5),
+    accom_phone VARCHAR(15),
+    accom_email VARCHAR(100),
 	accom_max_rooms INT(5) UNSIGNED NOT NULL,
 	accom_available_rooms INT(5) UNSIGNED NOT NULL,
 	
