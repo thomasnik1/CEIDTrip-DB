@@ -24,7 +24,7 @@ case "$COMMAND" in
     ;;
     
   logs)
-    sudo docker compose logs -f
+    sudo docker compose logs
     ;;
     
 esac
