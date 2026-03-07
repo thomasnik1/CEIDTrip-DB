@@ -11,9 +11,9 @@ This project aims to familiarize students with the creation and management of re
 | `admin` | `language_ref` |
 | `branch` | `manages` |
 | `customer` | `reservation` |
-| `dba` | `travel_to` |
+| `db_admin` | `travel_to` |
 | `destination` |  `trip_log` |
-| `driver` | `db_admin`|
+| `driver` |
 | `event` |
 | `guide` |
 | `languages` |
