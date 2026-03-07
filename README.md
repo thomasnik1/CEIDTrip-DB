@@ -7,21 +7,45 @@ This project aims to familiarize students with the creation and management of re
 
 | Core Entity Tables | Junction Tables |
 | :---: | :---: |
-| `admin` | `manages` |
-| `branch` | `phones` |
+| `accomodation` | `accomodation_reservation` |
+| `admin` | `language_ref` |
+| `branch` | `manages` |
 | `customer` | `reservation` |
-| `destination` | `travel_to` |
-| `driver` | `language_ref` |
-| `event` | `languages` |
-| `guide` | |
-| `trip` | |
-| `worker` | |
+| `db_admin` | `travel_to` |
+| `destination` |  `trip_log` |
+| `driver` |
+| `event` |
+| `guide` |
+| `languages` |
+| `phones` |
+| `trip` | 
+| `vehicle` |
+| `worker` | 
 
 ## Technologies Used
 **Database**: **MySQL** was used in order to build the database.<br>
-**Containerization**: **Docker & Docker Compose** were used in order to simplify the setup process and ensure environment stability and consistency across different systems.
+**Containerization**: **Docker & Docker Compose** were used in order to simplify the setup process and ensure environment stability and consistency across different systems.<br>
+**Automation**: **Bash (Shell Scripting)** was used to manage the container and database seeding.
 
-## Docker Commands
-Use ```sudo docker compose up -d``` to build the container. The database will already be initialized.<br>
-Use ```sudo docker exec -it ceidtrip-db mysql -u root -p``` to enter the container's MySQL CLI.<br>
-Use ```sudo docker compose down -v``` in order to shut down the docker container and delete all data. Since all the data and MySQL scripts are loaded when the container is built, we use this command so we can start fresh every time.
+## Getting Started
+Ensure **docker.sh** is executable by running the following command: 
+```bash
+chmod +x docker.sh
+```
+**docker.sh** is used to automate the process of building, entering and stopping the container. It can also be used to show the docker images and the logs.
+
+## Docker Management
+Use the following command to build the container:
+```bash
+./docker.sh up
+```
+The database will already be initialized.<br>
+To enter MySQL CLI, use:
+```bash
+./docker.sh shell
+```
+To shut down the docker container and delete all the data, use:
+```bash
+./docker.sh down
+```
+Since all the data and MySQL scripts are loaded when the container is built, we use this command in order to start fresh every time.
