@@ -1,0 +1,5 @@
+DROP TRIGGER IF EXISTS admin_logs;
+
+DELIMITER $
+
+CREATE TRIGGER admin_logs
