@@ -1,12 +1,5 @@
 INSERT INTO accomodation (
     accom_id, accom_name, accom_type, accom_stars, accom_score, 
-	accom_state, accom_street_num, accom_city, accom_postal_code,
-	accom_phone, accom_email, accom_max_rooms,
-    accom_available_rooms, accom_price,
-    accom_services, accom_dest_id
-) VALUES
-INSERT INTO accomodation (
-    accom_id, accom_name, accom_type, accom_stars, accom_score, 
     accom_state, accom_street_num, accom_city, accom_postal_code,
     accom_phone, accom_email, accom_max_rooms,
     accom_available_rooms, accom_price,
@@ -42,3 +35,4 @@ INSERT INTO accomodation (
 (28, 'Climbers Rest', 'RENTAL ROOM', NULL, 4.80, TRUE, '2 Vlachava', 'Meteora', 42200, '+302432077889', 'stay@climbersrest.gr', 4, 4, 50.00, 'FREE WIFI,AIR CONDITIONING', 4),
 (29, 'Palamidi View Hotel', 'HOTEL', 4, 4.65, TRUE, '15 Amalias', 'Nafplio', 21100, '+302752066778', 'info@palamidiview.gr', 40, 10, 145.00, 'FREE WIFI,BAR/RESTAURANT,AIR CONDITIONING', 5),
 (30, 'Arvanitia Guesthouse', 'GUESTHOUSE', NULL, 4.55, TRUE, '7 Fotomara', 'Nafplio', 21100, '+302752099001', 'hello@arvanitia.gr', 6, 2, 75.00, 'FREE WIFI,AIR CONDITIONING', 5);
+

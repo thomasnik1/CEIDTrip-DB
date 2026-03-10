@@ -69,7 +69,10 @@ BEGIN
 	UNTIL (finished_flag = 1)
 	END REPEAT;
 	CLOSE accom_cursor;
-	SELECT DISTINCT * FROM available_accomodations;
+	
+	SELECT DISTINCT * FROM available_accomodations ORDER BY temp_accomodation_price ASC;
+	SELECT DISTINCT * FROM available_accomodations ORDER BY temp_accomodation_stars DESC;
+	SELECT DISTINCT * FROM available_accomodations ORDER BY temp_accomodation_score DESC;
 	DROP TEMPORARY TABLE available_accomodations;
 END $
 
