@@ -3,6 +3,7 @@ services:
     image: mysql:lts
     container_name: ceidtrip-db
     restart: always
+    command: --secure-file-priv=""
     environment:
       MYSQL_DATABASE: travel_agency
       MYSQL_ROOT_PASSWORD: password
@@ -14,11 +15,10 @@ services:
       - ./source/database_schema:/scripts/1_creation:ro
       - ./source/triggers_scripts:/scripts/3_triggers:ro
       - ./source/database_seeding_scripts:/scripts/4_insertions:ro
-      
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-ppassword"]
       interval: 5s
-      timeout: 10s
+      timeout: 15s
       retries: 20
       start_period: 60s
       
