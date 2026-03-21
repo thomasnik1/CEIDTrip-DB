@@ -38,7 +38,7 @@ SELECT past_tr_departure, past_tr_return
 FROM trip_log
 WHERE past_tr_dest_count = 5;
 
-CREATE INDEX destination_count_index ON trip_log(past_tr_dest_count,past_tr_departure, past_tr_return);
+CREATE INDEX destination_count_index ON trip_log(past_tr_dest_count,past_tr_departure, past_tr_return) USING HASH;
 
 DROP PROCEDURE IF EXISTS destination_count_match;
 
