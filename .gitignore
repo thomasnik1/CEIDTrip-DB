@@ -1,1 +1,2 @@
 *.idea/
+/gui/db-gui/target/
