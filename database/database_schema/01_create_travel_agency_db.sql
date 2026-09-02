@@ -37,15 +37,22 @@ CREATE TABLE driver (
     FOREIGN KEY (drv_AT) REFERENCES worker(wrk_AT) ON DELETE CASCADE
 );
 
-CREATE TABLE language_ref (
-    lang_code VARCHAR(5) PRIMARY KEY,
-    lang_name VARCHAR(50) UNIQUE
-);
-
 CREATE TABLE guide (
     gui_AT CHAR(10) PRIMARY KEY,
     gui_cv TEXT,
     FOREIGN KEY (gui_AT) REFERENCES worker(wrk_AT) ON DELETE CASCADE
+);
+
+CREATE TABLE admin (
+    adm_AT CHAR(10) PRIMARY KEY,
+    adm_type ENUM('LOGISTICS', 'ADMINISTRATIVE', 'ACCOUNTING') NOT NULL,
+    adm_diploma VARCHAR(200),
+    FOREIGN KEY (adm_AT) REFERENCES worker(wrk_AT) ON DELETE CASCADE
+);
+
+CREATE TABLE language_ref (
+    lang_code VARCHAR(5) PRIMARY KEY,
+    lang_name VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE languages (
@@ -54,13 +61,6 @@ CREATE TABLE languages (
     PRIMARY KEY (lng_gui_AT, lng_language_code),
     FOREIGN KEY (lng_gui_AT) REFERENCES guide(gui_AT) ON DELETE CASCADE,
     FOREIGN KEY (lng_language_code) REFERENCES language_ref(lang_code)
-);
-
-CREATE TABLE admin (
-    adm_AT CHAR(10) PRIMARY KEY,
-    adm_type ENUM('LOGISTICS', 'ADMINISTRATIVE', 'ACCOUNTING') NOT NULL,
-    adm_diploma VARCHAR(200),
-    FOREIGN KEY (adm_AT) REFERENCES worker(wrk_AT) ON DELETE CASCADE
 );
 
 ALTER TABLE branch
@@ -100,6 +100,7 @@ CREATE TABLE trip (
     tr_br_code INT(11) NOT NULL,
     tr_gui_AT CHAR(10) NOT NULL,
     tr_drv_AT CHAR(10) NOT NULL,
+    tr_kilometers_traveled FLOAT(10,3),
     FOREIGN KEY (tr_br_code) REFERENCES branch(br_code),
     FOREIGN KEY (tr_gui_AT) REFERENCES guide(gui_AT),
     FOREIGN KEY (tr_drv_AT) REFERENCES driver(drv_AT)

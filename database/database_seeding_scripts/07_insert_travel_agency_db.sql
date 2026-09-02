@@ -72,14 +72,14 @@ INSERT INTO destination (dst_name, dst_descr, dst_rtype, dst_language_code, dst_
 ('Meteora', 'Monasteries on rocks', 'LOCAL', NULL, NULL),
 ('Nafplio', 'First capital of Greece', 'LOCAL', NULL, NULL);
 
-INSERT INTO trip (tr_departure, tr_return, tr_maxseats, tr_cost_adult, tr_cost_child, tr_status, tr_min_participants, tr_br_code, tr_gui_AT, tr_drv_AT) VALUES
-('2024-06-01 08:00:00', '2024-06-05 20:00:00', 50, 500.00, 250.00, 'CONFIRMED', 10, 1, 'AT3001', 'AT2002'), 
-('2024-07-10 09:00:00', '2024-07-15 18:00:00', 40, 600.00, 300.00, 'PLANNED', 15, 1, 'AT3004', 'AT2004'), 
-('2024-08-01 07:00:00', '2024-08-04 22:00:00', 50, 450.00, 200.00, 'PLANNED', 12, 2, 'AT3002', 'AT2002'), 
-('2024-05-20 08:30:00', '2024-05-22 19:00:00', 30, 150.00, 75.00, 'COMPLETED', 8, 3, 'AT3003', 'AT2003'), 
-('2024-09-15 09:00:00', '2024-09-17 17:00:00', 25, 120.00, 60.00, 'ACTIVE', 5, 3, 'AT3003', 'AT2001'), 
-('2024-12-20 10:00:00', '2024-12-26 20:00:00', 50, 700.00, 350.00, 'PLANNED', 20, 1, 'AT3001', 'AT2004'), 
-('2024-06-15 08:00:00', '2024-06-18 20:00:00', 45, 300.00, 150.00, 'CANCELED', 10, 2, 'AT3002', 'AT2002');
+INSERT INTO trip (tr_departure, tr_return, tr_maxseats, tr_cost_adult, tr_cost_child, tr_status, tr_min_participants, tr_br_code, tr_gui_AT, tr_drv_AT, tr_kilometers_traveled) VALUES
+('2024-06-01 08:00:00', '2024-06-05 20:00:00', 50, 500.00, 250.00, 'CONFIRMED', 10, 1, 'AT3001', 'AT2002', NULL), 
+('2024-07-10 09:00:00', '2024-07-15 18:00:00', 40, 600.00, 300.00, 'PLANNED', 15, 1, 'AT3004', 'AT2004', NULL), 
+('2024-08-01 07:00:00', '2024-08-04 22:00:00', 50, 450.00, 200.00, 'PLANNED', 12, 2, 'AT3002', 'AT2002', NULL), 
+('2024-05-20 08:30:00', '2024-05-22 19:00:00', 30, 150.00, 75.00, 'COMPLETED', 8, 3, 'AT3003', 'AT2003', 120.34), 
+('2024-09-15 09:00:00', '2024-09-17 17:00:00', 25, 120.00, 60.00, 'ACTIVE', 5, 3, 'AT3003', 'AT2001', NULL), 
+('2024-12-20 10:00:00', '2024-12-26 20:00:00', 50, 700.00, 350.00, 'PLANNED', 20, 1, 'AT3001', 'AT2004', NULL), 
+('2024-06-15 08:00:00', '2024-06-18 20:00:00', 45, 300.00, 150.00, 'CANCELED', 10, 2, 'AT3002', 'AT2002', NULL);
 
 INSERT INTO travel_to (to_tr_id, to_dst_id, to_arrival, to_departure, to_sequence) VALUES
 (1, 1, '2024-06-01 12:00:00', '2024-06-05 10:00:00', 1),
