@@ -15,7 +15,7 @@ CREATE TABLE vehicle (
 	
 	ve_state ENUM('AVAILABLE', 'IN USE', 'UNDER MAINTENANCE') NOT NULL,
 	ve_mileage FLOAT(10,3),
-	ve_tr_id INT(11) NOT NULL,
+	ve_tr_id INT(11),
 	FOREIGN KEY (ve_tr_id) REFERENCES trip(tr_id)
 );
 

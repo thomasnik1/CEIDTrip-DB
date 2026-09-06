@@ -39,15 +39,15 @@ BEGIN
 	
 	DROP TEMPORARY TABLE IF EXISTS available_accomodations;
 	CREATE TEMPORARY TABLE available_accomodations (
-        temp_accomodation_name VARCHAR(100),
-	    temp_accomodation_type ENUM('HOTEL', 'GUESTHOUSE', 'RESORT', 'APARTMENT', 'RENTAL ROOM'),
-	    temp_accomodation_street_num VARCHAR(50),
-	    temp_accomodation_phone VARCHAR(15),
-	    temp_accomodation_stars INT,
-	    temp_accomodation_score FLOAT(3,2),
-	    temp_accomodation_price FLOAT(10,2),
-	    temp_accomodation_services SET ('FREE WIFI', 'BAR/RESTAURANT', 'AIR CONDITIONING', 'WHEELCHAIR ACCESSIBLE')
-	    );
+        Name VARCHAR(100),
+        Type ENUM('HOTEL', 'GUESTHOUSE', 'RESORT', 'APARTMENT', 'RENTAL ROOM'),
+        Address VARCHAR(50),
+        Phone VARCHAR(15),
+        Stars INT,
+        Score FLOAT(3,2),
+        Price FLOAT(10,2),
+        Services SET ('FREE WIFI', 'BAR/RESTAURANT', 'AIR CONDITIONING', 'WHEELCHAIR ACCESSIBLE')
+    );
 	
 	OPEN accom_cursor;
 	SET finished_flag = 0;
@@ -70,13 +70,13 @@ BEGIN
 	END REPEAT;
 	CLOSE accom_cursor;
 	
-	SELECT DISTINCT * FROM available_accomodations ORDER BY temp_accomodation_price ASC;
-	SELECT DISTINCT * FROM available_accomodations ORDER BY temp_accomodation_stars DESC;
-	SELECT DISTINCT * FROM available_accomodations ORDER BY temp_accomodation_score DESC;
+	SELECT DISTINCT * FROM available_accomodations ORDER BY Price ASC;
+    SELECT DISTINCT * FROM available_accomodations ORDER BY Stars DESC;
+    SELECT DISTINCT * FROM available_accomodations ORDER BY Score DESC;
 	DROP TEMPORARY TABLE available_accomodations;
 END $
 
 DELIMITER ;
 
-CALL search_accomodation(1, '2026-01-01', '2026-01-05', 1);
+CALL search_accomodation(1, '2026-01-01', '2026-01-05', 10);
 
