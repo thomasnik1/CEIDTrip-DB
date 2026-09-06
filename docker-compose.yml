@@ -13,6 +13,7 @@ services:
       - mysql_data:/var/lib/mysql
       - ./init.sh:/docker-entrypoint-initdb.d/init.sh:ro
       - ./database/database_schema:/scripts/1_creation:ro
+      - ./database/stored_procedures_scripts:/scripts/2_procedures:ro
       - ./database/triggers_scripts:/scripts/3_triggers:ro
       - ./database/database_seeding_scripts:/scripts/4_insertions:ro
     healthcheck:

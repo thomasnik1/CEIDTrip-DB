@@ -27,4 +27,13 @@ case "$COMMAND" in
     sudo docker compose logs
     ;;
     
+  info)
+    echo "Διαθέσιμες επιλογές (Commands):"
+    echo "  up    - Εκκίνηση των containers (detached mode)"
+    echo "  down  - Τερματισμός και διαγραφή των containers και volumes"
+    echo "  shell - Είσοδος στο MySQL shell του ceidtrip-db"
+    echo "  show  - Εμφάνιση όλων των Docker containers"
+    echo "  logs  - Εμφάνιση των logs του docker compose"
+    echo "  info  - Εμφάνιση αυτού του μηνύματος βοήθειας"
+    ;;
 esac

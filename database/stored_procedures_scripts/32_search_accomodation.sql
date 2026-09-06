@@ -77,6 +77,3 @@ BEGIN
 END $
 
 DELIMITER ;
-
-CALL search_accomodation(1, '2026-01-01', '2026-01-05', 10);
-

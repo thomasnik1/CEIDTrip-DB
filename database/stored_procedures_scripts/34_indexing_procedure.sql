@@ -29,9 +29,6 @@ END $
 
 DELIMITER ;
 
-CALL profits_for_period('2021-12-28', '2022-01-30');
-
-
 DROP INDEX destination_count_index ON trip_log;
 
 SELECT past_tr_departure, past_tr_return
@@ -57,6 +54,3 @@ BEGIN
 END $
 
 DELIMITER ;
-
-CALL destination_count_match(5);
-
