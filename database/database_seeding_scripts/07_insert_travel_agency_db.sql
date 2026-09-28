@@ -65,12 +65,12 @@ INSERT INTO languages (lng_gui_AT, lng_language_code) VALUES
 ('AT3002', 'DE'),
 ('AT3003', 'EN');
 
-INSERT INTO destination (dst_name, dst_descr, dst_rtype, dst_language_code, dst_location) VALUES
-('Paris', 'The city of lights', 'ABROAD', 'FR', NULL),
-('London', 'Capital of UK', 'ABROAD', 'EN', NULL),
-('Berlin', 'Capital of Germany', 'ABROAD', 'DE', NULL),
-('Meteora', 'Monasteries on rocks', 'LOCAL', NULL, NULL),
-('Nafplio', 'First capital of Greece', 'LOCAL', NULL, NULL);
+INSERT INTO destination (dst_name, dst_descr, dst_rtype, dst_language_code) VALUES
+('Paris', 'The city of lights', 'ABROAD', 'FR'),
+('London', 'Capital of UK', 'ABROAD', 'EN'),
+('Berlin', 'Capital of Germany', 'ABROAD', 'DE'),
+('Meteora', 'Monasteries on rocks', 'LOCAL', NULL),
+('Nafplio', 'First capital of Greece', 'LOCAL', NULL);
 
 INSERT INTO trip (tr_departure, tr_return, tr_maxseats, tr_cost_adult, tr_cost_child, tr_status, tr_min_participants, tr_br_code, tr_gui_AT, tr_drv_AT, tr_kilometers_traveled) VALUES
 ('2024-06-01 08:00:00', '2024-06-05 20:00:00', 50, 500.00, 250.00, 'CONFIRMED', 10, 1, 'AT3001', 'AT2002', NULL), 

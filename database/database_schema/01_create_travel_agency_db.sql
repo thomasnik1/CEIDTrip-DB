@@ -37,6 +37,11 @@ CREATE TABLE driver (
     FOREIGN KEY (drv_AT) REFERENCES worker(wrk_AT) ON DELETE CASCADE
 );
 
+CREATE TABLE language_ref (
+    lang_code VARCHAR(5) PRIMARY KEY,
+    lang_name VARCHAR(50) UNIQUE
+);
+
 CREATE TABLE guide (
     gui_AT CHAR(10) PRIMARY KEY,
     gui_cv TEXT,
@@ -48,11 +53,6 @@ CREATE TABLE admin (
     adm_type ENUM('LOGISTICS', 'ADMINISTRATIVE', 'ACCOUNTING') NOT NULL,
     adm_diploma VARCHAR(200),
     FOREIGN KEY (adm_AT) REFERENCES worker(wrk_AT) ON DELETE CASCADE
-);
-
-CREATE TABLE language_ref (
-    lang_code VARCHAR(5) PRIMARY KEY,
-    lang_name VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE languages (
@@ -83,9 +83,7 @@ CREATE TABLE destination (
     dst_descr TEXT,
     dst_rtype ENUM('LOCAL', 'ABROAD') NOT NULL,
     dst_language_code VARCHAR(5),
-    dst_location INT(11), 
-    FOREIGN KEY (dst_language_code) REFERENCES language_ref(lang_code),
-    FOREIGN KEY (dst_location) REFERENCES destination(dst_id)
+    FOREIGN KEY (dst_language_code) REFERENCES language_ref(lang_code)
 );
 
 CREATE TABLE trip (
