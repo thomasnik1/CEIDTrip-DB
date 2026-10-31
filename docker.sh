@@ -29,11 +29,10 @@ case "$COMMAND" in
     
   info)
     echo "Διαθέσιμες επιλογές (Commands):"
-    echo "  up    - Εκκίνηση των containers (detached mode)"
-    echo "  down  - Τερματισμός και διαγραφή των containers και volumes"
-    echo "  shell - Είσοδος στο MySQL shell του ceidtrip-db"
-    echo "  show  - Εμφάνιση όλων των Docker containers"
-    echo "  logs  - Εμφάνιση των logs του docker compose"
-    echo "  info  - Εμφάνιση αυτού του μηνύματος βοήθειας"
+    echo "  up    - Build and start the database container(detached mode)"
+    echo "  down  - Tear down the container and reset the database"
+    echo "  shell - Access the MySQL CLI"
+    echo "  logs  - View container logs"
+    echo "  info  - Display all available docker.sh commands "
     ;;
 esac
