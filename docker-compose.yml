@@ -5,8 +5,8 @@ services:
     restart: always
     command: --secure-file-priv=""
     environment:
-      MYSQL_DATABASE: travel_agency
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "3306:3306"
     volumes:

@@ -16,7 +16,7 @@ case "$COMMAND" in
     ;;
     
   shell)
-    sudo docker exec -it ceidtrip-db mysql -u root -p travel_agency
+    sudo docker exec -it ceidtrip-db mysql -u root -p${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE}
     ;;
     
   show)
