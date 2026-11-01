@@ -7,15 +7,17 @@ A MySQL database designed to manage the operations of a travel agency. CEIDTrip-
 
 ## Table of Contents
 
-- [Project Descriprion](#project-description)
+- [Project Description](#project-description)
 - [Database Schema Overview](#database-schema-overview)
+- [Project Architecture](#project-architecture)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [CLI Automation & Container Management](#cli-automation--container-management)
 
 ## Project Description
 This project aims to familiarize students with the creation and management of relational databases using MySQL. Our purpose in this project is to create a database for a travel agency. The travel agency operates different branches, employs various staff, and organizes trips and events. The database must contain the core tables for each primary entity along with some associative tables in order to handle the relationships between them. The core and junction tables we must create and use are as follows:
-### Database Schema Overview
+
+## Database Schema Overview
 
 | Core Entity Tables | Junction Tables |
 | :---: | :---: |
@@ -34,17 +36,22 @@ This project aims to familiarize students with the creation and management of re
 | `vehicle` | 
 | `worker` |
 
-### Project Architecture
+## Project Architecture
 
+In order for this project to adhere to the principles of modular database provisioning and infrastructure-as-code automation, the directory structure is designed as follows:
 ```
 |---database/
 |   |---database_schema/            # Table definitions and constraints
 |   |---database_seeding_scripts/   # Initial dataset insertion scripts
 |   |---stored_procedures_scripts/  # Stored procedures 
 |   |---triggers_scripts/           # Triggers used
+|---.env.sample                     # Environment variable template
 |---docker-compose.yml              # Container service definition & volume mapping
 |---docker.sh                       # CLI automation script for lifecycle management
+|---init.sh                         # Startup entrypoint
 ```
+
+The top-level `docker.sh` acts as a developer-friendly CLI entrypoint, triggering `docker-compose.yml` to orchestrate isolated container environments and volume mappings. Upon container startup, `init.sh` automates the sequential execution of database routines, enforcing a strict, dependency-aware pipeline.
 
 ## Tech Stack
 **MySQL** serves as the primary relational database engine, managing normalized schemas, transactional integrity, and stored routines.  
@@ -64,7 +71,7 @@ git clone https://github.com/thomasnik1/CEIDTrip-DB.git
 ```bash
 chmod +x docker.sh
 ```
-**docker.sh** αutomates end-to-end container workflows by encapsulating routine Docker commands into a single CLI utility for building images, attaching interactive shells, terminating services, and streaming runtime logs.
+**docker.sh** automates end-to-end container workflows by encapsulating routine Docker commands into a single CLI utility for building images, attaching interactive shells, terminating services, and streaming runtime logs.
 
 ## CLI Automation & Container Management
 - Display all available **docker.sh** commands:
@@ -76,7 +83,7 @@ chmod +x docker.sh
 ```bash
 ./docker.sh up
 ```
-During the container build/startup, **init.sh** automates the execution of all DDL and DML scripts, leaving database fully initialized and ready for immediate use.
+During the container build/startup, **init.sh** automates the execution of all DDL and DML scripts, leaving the database fully initialized and ready for immediate use.
 - Access the MySQL CLI:
 ```bash
 ./docker.sh shell
@@ -89,8 +96,8 @@ No manual credential entry is required, as all connection parameters are automat
 ```
 This command stops and removes the container along with all associated volumes. Since schema provisioning and seed data are executed automatically on initialization, this ensures a clean, reproducible state for every run.
 
-- **View container logs:**
+- View container logs:
 ```bash
-  ./docker.sh logs
+./docker.sh logs
 ```
 Monitors and streams real-time container logs, enabling quick inspection of database initialization and runtime queries.

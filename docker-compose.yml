@@ -4,6 +4,8 @@ services:
     container_name: ceidtrip-db
     restart: always
     command: --secure-file-priv=""
+    env_file:
+      - .env
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -17,9 +19,9 @@ services:
       - ./database/triggers_scripts:/scripts/3_triggers:ro
       - ./database/database_seeding_scripts:/scripts/4_insertions:ro
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-ppassword"]
-      interval: 5s
-      timeout: 15s
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$MYSQL_ROOT_PASSWORD"]
+      interval: 8s
+      timeout: 20s
       retries: 20
       start_period: 60s
       
