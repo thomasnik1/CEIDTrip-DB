@@ -51,7 +51,7 @@ In order for this project to adhere to the principles of modular database provis
 |---init.sh                         # Startup entrypoint
 ```
 
-The top-level `docker.sh` acts as a developer-friendly CLI entrypoint, triggering `docker-compose.yml` to orchestrate isolated container environments and volume mappings. Upon container startup, `init.sh` automates the sequential execution of database routines, enforcing a strict, dependency-aware pipeline.
+The top-level **docker.sh** acts as a developer-friendly CLI entrypoint, triggering **docker-compose.yml** to orchestrate isolated container environments and volume mappings. Upon container startup, **init.sh** automates the sequential execution of database routines, enforcing a strict, dependency-aware pipeline.
 
 ## Tech Stack
 **MySQL** serves as the primary relational database engine, managing normalized schemas, transactional integrity, and stored routines.  
