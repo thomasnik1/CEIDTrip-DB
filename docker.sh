@@ -18,21 +18,36 @@ case "$COMMAND" in
   shell)
     sudo docker exec -it ceidtrip-db mysql -u root -p${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE}
     ;;
+
+  start)
+    sudo docker compose start ceidtrip-db
+    ;;
+
+  stop)
+    sudo docker compose stop ceidtrip-db
+    ;;
     
-  show)
-    sudo docker container ls -a
+  status)
+    sudo docker container ls -a -f "name=ceidtrip-db"
     ;;
     
   logs)
-    sudo docker compose logs
+    sudo docker compose logs ceidtrip-db
     ;;
-    
-  info)
-    echo "Διαθέσιμες επιλογές (Commands):"
-    echo "  up    - Build and start the database container(detached mode)"
-    echo "  down  - Tear down the container and reset the database"
-    echo "  shell - Access the MySQL CLI"
-    echo "  logs  - View container logs"
-    echo "  info  - Display all available docker.sh commands "
+      
+  help)
+    echo "Available Commands:"
+    echo "  up     - Build and start the database container(detached mode)"
+    echo "  down   - Tear down the container and reset the database"
+    echo "  shell  - Access the MySQL CLI"
+    echo "  start  - Start the container"
+    echo "  stop   - Stop the container"
+    echo "  status - Show ceidtrip-db container status"
+    echo "  logs   - View container logs"
+    echo "  help   - Display all available docker.sh commands "
+    ;;
+
+  *)
+    echo "Error: Unkown command '$COMMAND'. Use 'help' to see available commands."
     ;;
 esac

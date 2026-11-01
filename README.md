@@ -74,21 +74,12 @@ chmod +x docker.sh
 **docker.sh** automates end-to-end container workflows by encapsulating routine Docker commands into a single CLI utility for building images, attaching interactive shells, terminating services, and streaming runtime logs.
 
 ## CLI Automation & Container Management
-- Display all available **docker.sh** commands:
-```bash
-./docker.sh info
-```
 
 - Build and start the database container:
 ```bash
 ./docker.sh up
 ```
 During the container build/startup, **init.sh** automates the execution of all DDL and DML scripts, leaving the database fully initialized and ready for immediate use.
-- Access the MySQL CLI:
-```bash
-./docker.sh shell
-```
-No manual credential entry is required, as all connection parameters are automatically loaded from the .env file.
 
 - Tear down the container and reset the database:
 ```bash
@@ -96,8 +87,41 @@ No manual credential entry is required, as all connection parameters are automat
 ```
 This command stops and removes the container along with all associated volumes. Since schema provisioning and seed data are executed automatically on initialization, this ensures a clean, reproducible state for every run.
 
+- Access the MySQL CLI:
+```bash
+./docker.sh shell
+```
+No manual credential entry is required, as all connection parameters are automatically loaded from the .env file.
+
+- Start the container:
+```bash
+./docker.sh start
+```
+
+- Stop the container:
+```bash
+./docker.sh stop
+```
+
+- Show the container status:
+```bash
+./docker.sh status
+```
+Outputs the container status along with general info.
+
 - View container logs:
 ```bash
 ./docker.sh logs
 ```
 Monitors and streams real-time container logs, enabling quick inspection of database initialization and runtime queries.
+
+- Display all available **docker.sh** commands:
+```bash
+./docker.sh help
+```
+- In any other case, **docker.sh** will throw an error message:
+
+```
+./docker.sh command
+Error: Unkown command 'command'. Use 'help' to see available commands.
+```
